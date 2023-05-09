@@ -13,13 +13,6 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
     case "add":
       const newContact = await contactsService.addContact(name, email, phone);
       return console.log(newContact);
-    // case "updateContact":
-    //   const updateContact = await contactsService.updateContactById(id, {
-    //     name,
-    //     email,
-    //     phone,
-    //   });
-    //   return console.log(updateContact);
     case "remove":
       const deleteContact = await contactsService.removeContact(id);
       return console.log(deleteContact);
@@ -37,5 +30,4 @@ program
 
 program.parse();
 const options = program.opts();
-// console.log(options);
 invokeAction(options);
